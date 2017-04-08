@@ -37,17 +37,6 @@ body {
 	margin: 0 0 0 215px;
 }
 
-.content {
-	z-index: 1;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-	padding: 25px 50px;
-	background: url(../img/bg_lavender.jpg) no-repeat top left;
-	background-size: auto 100%;
-}
-
 .btn {
 	border: none;
 	background: none;
@@ -159,21 +148,6 @@ body {
 	writing-mode: vertical-rl;
 }
 
-.column {
-	width: 30vw;
-}
-
-.column__title {
-	color: #ff764b;
-}
-
-.column__text {
-	font-size: 2em;
-	font-weight: normal;
-	margin: 0;
-	color: #fff4d7;
-}
-
 .box {
 	position: relative;
 	width: 40vw;
@@ -182,15 +156,6 @@ body {
 	margin-top: 40px;
 	background-size: cover;
 	background-position: 50% 0;
-}
-
-.box__title {
-	font-size: 6em;
-	position: absolute;
-	bottom: 0;
-	left: -1em;
-	margin: 0;
-	color: #fff;
 }
 
 .tabscontent__item:first-child .box {

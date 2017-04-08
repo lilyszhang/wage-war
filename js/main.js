@@ -258,6 +258,16 @@ function renderRatioChart() {
             showLines: true,
             responsive: true,
             maintainAspectRatio:false,
+            animation: {
+              duration: 0,
+              onComplete: function () {
+                  payRatio.textAlign = 'center';
+                  payRatio.textBaseline = 'bottom';
+                  payRatio.fillStyle='rgba(51, 51, 51, 0.7)';
+                  payRatio.font="bold 15px Lato";
+                  payRatio.fillText("Equal Pay", 1060, 60);
+              },
+            },
             scaleFontColor: "#333",
             scales: {
              xAxes: [{
