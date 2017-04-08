@@ -419,6 +419,10 @@ a:focus {
 
 }
 
+.tips-text:hover{
+	color: white;
+
+}
 #text-holder {
 	margin-left: -150px;
 }
@@ -427,7 +431,7 @@ a:focus {
 	position: relative;
 	height: 250px;
 	width: 250px;
-	margin: 15px;
+	margin: 30px;
 	float: left;
 	z-index: 1;
 }
@@ -450,6 +454,7 @@ a:focus {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  background-color: #EBE8DF;
 }
 
 .back.face {
@@ -465,7 +470,6 @@ a:focus {
 #f1_card {
   width: 100%;
   height: 100%;
-  background-color: #EBE8DF;
   transform-style: preserve-3d;
   transition: all 1.0s linear;
 }
@@ -475,5 +479,11 @@ a:focus {
 }
 
 #squares-container {
-	margin-left: 120px;
+	margin-left: 250px;
+	margin-right: 0px;
+}
+
+.box-text {
+	position: relative;
+	padding-top
 }
