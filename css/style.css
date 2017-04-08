@@ -59,8 +59,10 @@ body {
 
 .btn--back {
 	font-size: 3em;
-	position: absolute;
 	z-index: 1002;
+	padding-left: 150px;
+	margin-left:auto;
+	margin-right:-800px;
 	top: 7em;
 	right: 1em;
 	opacity: 0;
