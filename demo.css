@@ -414,15 +414,114 @@ a:focus {
 	}
 }
 
-.tips-text {
+.tips-text1 {
 	font-size: 18px;
-
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
 }
 
-.tips-text:hover{
+.tips-text1:hover{
 	color: white;
-
+	height: 100px;
 }
+
+.tips-text2 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text2:hover{
+	color: white;
+	height: 125px;
+}
+
+.tips-text3 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text3:hover{
+	color: white;
+	height: 150px;
+}
+
+.tips-text4 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text4:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text5 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text5:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text6 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text6:hover{
+	color: white;
+	height: 75px;
+}
+
+.tips-text7 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text7:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text8 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text8:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text9 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text9:hover{
+	color: white;
+	height: 100px;
+}
+
 #text-holder {
 	margin-left: -150px;
 }
@@ -486,4 +585,10 @@ a:focus {
 .box-text {
 	position: relative;
 	padding-top
+}
+
+#text-section {
+	padding-left: 150px;
+	padding-right: 50px;
+
 }
