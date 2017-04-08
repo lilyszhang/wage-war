@@ -6,20 +6,9 @@
 }
 
 body {
-	font-family: 'Lato', Arial, sans-serif;
-	color: #393a3e;
+	font-family: 'Lato', sans-serif;
+	color: #333;
 	background:  #EBE8DF;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-	outline: none;
-}
-
-a:hover,
-a:focus {
-	color: #1d48f3;
 }
 
 .hidden {
@@ -57,13 +46,6 @@ a:focus {
 	padding: 25px 50px;
 	background: url(../img/bg_lavender.jpg) no-repeat top left;
 	background-size: auto 100%;
-}
-
-.deco__text {
-	font-size: 0.8em;
-	line-height: 1;
-	margin: 0;
-	color: #bcb8e8;
 }
 
 .btn {
@@ -104,48 +86,6 @@ a:focus {
 	display: block;
 }
 
-/* Demo links */
-.demos {
-	display: flex;
-	align-items: center;
-	margin: 2em 0 0 auto;
-}
-
-.demos__text {
-	font-size: 0.8em;
-	display: block;
-	margin: 0 2em 0 0;
-	color: #bcb8e8;
-}
-
-.demo {
-	position: relative;
-	display: block;
-	margin: 0 0 0 1.5em;
-}
-
-.demo:hover,
-.demo:focus {
-	outline: none;
-}
-
-.demo--current {
-	pointer-events: none;
-	color: #fff;
-}
-
-.demo--current::before {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	top: 50%;
-	left: 50%;
-	width: 32px;
-	height: 32px;
-	margin: -17px 0 0 -16px;
-	border-radius: 50%;
-	background: #1d48f3;
-}
 /* Content */
 .tabscontent {
 	pointer-events: none;
@@ -173,19 +113,17 @@ a:focus {
 .poster {
 	position: relative;
 	height: 80vh;
-	margin: 10vh auto;
-	padding: 0 50px;
 	pointer-events: none;
 }
 
 .poster__img {
 	display: block;
-	max-width: 100%;
-	max-height: 100%;
-	margin: 0 auto;
+	max-width: 200%;
+	max-height: 200%;
+	margin-left: -250px;
+	margin-top: 20px;
+	margin-right: 60px;
 }
-
-
 
 .poster__caption {
 	position: absolute;
@@ -196,7 +134,6 @@ a:focus {
 	height: 100%;
 	padding: 0 50px;
 }
-
 
 .poster__number {
 	font-size: 5em;
@@ -308,17 +245,129 @@ a:focus {
 	}
 }
 
+.tips-text1 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text1:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text2 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text2:hover{
+	color: white;
+	height: 125px;
+}
+
+.tips-text3 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text3:hover{
+	color: white;
+	height: 150px;
+}
+
+.tips-text4 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text4:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text5 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text5:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text6 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text6:hover{
+	color: white;
+	height: 75px;
+}
+
+.tips-text7 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text7:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text8 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text8:hover{
+	color: white;
+	height: 100px;
+}
+
+.tips-text9 {
+	font-size: 18px;
+	height: 49px;
+	width: 500px;
+	overflow: hidden;
+}
+
+.tips-text9:hover{
+	color: white;
+	height: 100px;
+}
+
+#text-holder {
+	margin-left: -150px;
+}
+
 .square {
 	position: relative;
 	height: 250px;
 	width: 250px;
-	background-color: #EBE8DF;
-	margin: 15px;
+	margin: 30px;
 	float: left;
+	z-index: 1;
 }
 
-.square:hover {
-	transform: rotateY(180deg);
+.square{
+		perspective: 1000;
 }
 
 .square-text {
@@ -328,44 +377,47 @@ a:focus {
 	padding: 50px;
 }
 
-.flip-container {
-	perspective: 1000px;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front-face, .back-face {
-	width: 320px;
-	height: 480px;
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #EBE8DF;
 }
 
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
+.back.face {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: #333;
+  text-align: center;
+  background-color: #EBE8DF;
+}
 
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
+
+.square:hover #f1_card {
+  transform: rotateY(180deg);
+}
+
+#squares-container {
+	margin-left: 250px;
+	margin-right: 0px;
+}
+
+.box-text {
 	position: relative;
+	padding-top
 }
 
-/* hide back of pane during swap */
-.front-face, .back-face {
-	backface-visibility: hidden;
+#text-section {
+	padding-left: 150px;
+	padding-right: 50px;
 
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front-face {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back-face {
-	transform: rotateY(180deg);
 }
