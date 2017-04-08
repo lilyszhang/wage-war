@@ -1,7 +1,8 @@
 .tabsnav {
 	position: fixed;
 	top: 0;
-	left: 0;
+	/*left: 0;*/
+	margin-left: -35px;
 	width: 100%;
 	z-index: 1000;
 }
@@ -38,6 +39,7 @@
 	align-items: center;
 	pointer-events: none;
 	color: #333;
+	white-space: nowrap;
 }
 
 /* Vertical Menu */
@@ -57,8 +59,6 @@
 	transform: rotate(-90deg);
 }
 
-/* Individual menu styles (Basque names) */
-
 /* Ander */
 .tabsnav--ander {
 	left: 45px;
@@ -74,49 +74,6 @@
 
 .tabsnav--ander .tabsnav__item:not(:last-child) {
 	margin: 0 10px 0 0;
-}
-
-/* Zeru */
-.tabsnav--zeru {
-	background: #222525;
-}
-
-.tabsnav--zeru .tabsnav__item:first-child .tabsnav__bar {
-	background: #161919;
-}
-
-.tabsnav--zeru .tabsnav__item:nth-child(2) .tabsnav__bar {
-	background: #222525;
-}
-
-.tabsnav--zeru .tabsnav__item:nth-child(3) .tabsnav__bar {
-	background: #2e3131;
-}
-
-.tabsnav--zeru .tabsnav__title {
-	color: #fff;
-}
-
-/* Ibai */
-.tabsnav--ibai {
-	top: 50%;
-	margin-top: -115px;
-}
-
-.tabsnav--ibai .tabsnav__item {
-	height: 70px;
-}
-
-.tabsnav--ibai .tabsnav__bar {
-	background: #414a52;
-}
-
-.tabsnav--ibai .tabsnav__title {
-	color: #fc0;
-}
-
-.tabsnav--ibai .tabsnav__item:not(:last-child) {
-	margin: 0 0 10px 0;
 }
 
 @media screen and (max-width: 40em) {

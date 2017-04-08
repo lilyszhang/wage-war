@@ -22,7 +22,7 @@ function renderRatioChart() {
   $('#graph-container').append('<canvas id="payRatio"><canvas>');
   var payRatio = document.getElementById('payRatio').getContext('2d');
   payRatio.canvas.width = window.innerWidth;
-  payRatio.canvas.height = window.innerHeight-120;
+  payRatio.canvas.height = window.innerHeight-350;
   var data = [{
       type: 'bubble',
       label: 'Gender Pay Ratio',
@@ -185,8 +185,10 @@ function renderRatioChart() {
           x: 100000,
           y: 100000
         }],
-        borderColor: "transparent",
+        borderColor: "rgba(51,51,51,0.5)",
         pointHoverRadius: 0,
+        pointRadius: 0,
+        fill: false,
       }]
 
       var payRatioChart = new Chart(payRatio, {
@@ -197,7 +199,9 @@ function renderRatioChart() {
           options: {
             title: {
               display: true,
-              text: 'Gender Pay Gap'
+            },
+            legend: {
+              display: false
             },
             tooltips: {
               enabled: false,
@@ -254,6 +258,7 @@ function renderRatioChart() {
             showLines: true,
             responsive: true,
             maintainAspectRatio:false,
+            scaleFontColor: "#333",
             scales: {
              xAxes: [{
                      type: 'linear',
@@ -264,13 +269,19 @@ function renderRatioChart() {
                          }
                      },
                      scaleLabel: {
+                       fontSize: 15,
                        display: true,
+                       fontStyle: "bold",
+                       fontFamily: "Lato",
                        labelString: 'Mens Median Annual Earnings'
                      }
                    }],
              yAxes: [{
                      scaleLabel: {
+                       fontSize: 15,
                        display: true,
+                       fontStyle: "bold",
+                       fontFamily: "Lato",
                        labelString: 'Womens Median Annual Earnings'
                      },
                      ticks: {
@@ -289,7 +300,7 @@ function renderHoursChart() {
   $('#graph-container').append('<canvas id="hoursC"><canvas>');
   var hoursC = document.getElementById('hoursC').getContext('2d');
   hoursC.canvas.width = window.innerWidth;
-  hoursC.canvas.height = window.innerHeight-40;
+  hoursC.canvas.height = window.innerHeight-50;
   var ctx = document.getElementById("hoursC").getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
@@ -297,35 +308,45 @@ function renderHoursChart() {
       labels: ["Management", "Business and Finance", "Mathematics", "Computer Systems Analyst", "Software Developer", "Computer Support", "Other Computer Occupations", "Operations Research Analyst", "Architecture and Engineering", "Sciences", "Community and Social Service", "Legal", "Education", "Arts, Media, and Sports", "Healthcare Practitioner", "Healthcare Support", "Protective Services", "Food and Food Service", "Building and Grounds Maintenance", "Personal Care and Service", "Sales", "Office and Administration", "Natural Resources and Construction", "Production and Transportation"],
       datasets: [{
         label: 'Extra hours',
-        backgroundColor: "rgba(52,187,199,0.8)",
+        backgroundColor: "rgba(166, 212, 159,1)",
         data: [1.34, 1.35, 1.15, 1.11, 1.20, 1.06, 1.18, 1.06, 1.27, 1.18, 1.14, 1.65, 1.24, 1.20, 1.29, 1.16, 1.24, 1.13, 1.21, 1.27, 1.53, 1.06, 1.37, 1.33]
       },]
     },
     options: {
       title: {
         display: true,
-        text: 'For every 1 hour men work, women have to work...'
+        fontSize: 17,
+        fontFamily: "Lato",
+        fontColor: "#333",
+        text: 'For every hour men work, women have to work ____ to earn the same amount.'
+      },
+      legend: {
+        display: false
       },
       showLines: true,
       responsive: true,
+      scaleFontColor: "#333",
       scales: {
            xAxes: [{
                stacked: true,
                scaleLabel: {
                  display: true,
-                 labelString: 'Occupation'
                },
                ticks: {
                     autoSkip: false,
                     maxRotation: 90,
-                    minRotation: 90
-                }
+                    minRotation: 90,
+
+                },
            }],
            yAxes: [{
                stacked: true,
                scaleLabel: {
+                 fontSize: 15,
+                 fontStyle: "bold",
+                 fontFamily: "Lato",
                  display: true,
-                 labelString: 'Extra Hours'
+                 labelString: 'Hours'
                },
            }]
        }
