@@ -247,16 +247,16 @@ a:focus {
 .poster {
 	position: relative;
 	height: 80vh;
-	margin: 10vh auto;
-	padding: 0 50px;
 	pointer-events: none;
 }
 
 .poster__img {
 	display: block;
-	max-width: 100%;
-	max-height: 100%;
-	margin: 0 auto;
+	max-width: 200%;
+	max-height: 200%;
+	margin-left: -250px;
+	margin-top: 20px;
+	margin-right: 60px;
 }
 
 
@@ -414,18 +414,28 @@ a:focus {
 	}
 }
 
+.tips-text {
+	font-size: 18px;
+
+}
+
+#text-holder {
+	margin-left: -150px;
+}
+
 .square {
 	position: relative;
 	height: 250px;
 	width: 250px;
-	background-color: #EBE8DF;
 	margin: 15px;
 	float: left;
+	z-index: 1;
 }
 
-.square:hover {
-	transform: rotateY(180deg);
+.square{
+		perspective: 1000;
 }
+
 
 .square-text {
 	color: #333;
@@ -434,44 +444,36 @@ a:focus {
 	padding: 50px;
 }
 
-.flip-container {
-	perspective: 1000px;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
 
-.flip-container, .front-face, .back-face {
-	width: 320px;
-	height: 480px;
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
+.back.face {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: #333;
+  text-align: center;
+  background-color: #EBE8DF;
 }
 
-/* hide back of pane during swap */
-.front-face, .back-face {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
+#f1_card {
+  width: 100%;
+  height: 100%;
+  background-color: #EBE8DF;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
 }
 
-/* front pane, placed above back */
-.front-face {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+.square:hover #f1_card {
+  transform: rotateY(180deg);
 }
 
-/* back, initially hidden pane */
-.back-face {
-	transform: rotateY(180deg);
+#squares-container {
+	margin-left: 120px;
 }
