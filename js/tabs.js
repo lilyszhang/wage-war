@@ -39,7 +39,7 @@
 			var contentItem = contentItems[idx],
 				content = {
 					img: contentItem.querySelector('img.poster__img'),
-					title: contentItem.querySelector('.poster__title'),
+					title: contentItem.querySelector('.tab'),
 					deco: contentItem.querySelector('.poster__deco'),
 					box: contentItem.querySelector('.poster__box'),
 					number: contentItem.querySelector('.poster__number')
