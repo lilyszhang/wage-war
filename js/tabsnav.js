@@ -1,28 +1,10 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2017, Codrops
- * http://www.codrops.com
- *
- *
- * todos:
- * 		Need to fix extramovable elements animations. For example, for the demos provided, need to fix the direction of the animation for the content element when it's on the left or under the tabs.
- *	  	Add animation settings for the toggle visibility function.
- *	    Count with scroll values in the calculations.
- *		Control the tite better so one could remove it from the page once open.
- *		...
- */
-;(function(window) {
+(function(window) {
 
 	'use strict';
 
 	// Helper vars and functions.
 	function extend( a, b ) {
-		for( var key in b ) { 
+		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -110,7 +92,7 @@
 		}, 10);
 		window.addEventListener('resize', this.debounceResizeFn);
 
-		enquire.register('screen and (min-width:0) and (max-width:40em)', { 
+		enquire.register('screen and (min-width:0) and (max-width:40em)', {
 			match: function() {
 				// hide if tabs are not open
 				if(!self.isOpen && !self.isVisible) {
@@ -118,7 +100,7 @@
 				}
 			}
 		});
-		enquire.register('screen and (min-width:40em)', { 
+		enquire.register('screen and (min-width:40em)', {
 			match: function() {
 				// show
 				if( !self.DOM.el.classList.contains('tabsnav--hidden-default') ) {
@@ -144,7 +126,7 @@
 		var bounds = tab.getBoundingClientRect(),
 			currentDimensions = { left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height },
 			self = this;
-		
+
 		// Choose the dimentions based on the layout mode.
 		this.dim = {
 			measure: this.options.layout === 'vertical' ? currentDimensions.width : currentDimensions.height,
@@ -156,10 +138,10 @@
 			// Set transform origin on the respective bar.
 			bar.style.transformOrigin = self.options.layout === 'vertical' ? '0% 50%' : '50% 0%';
 		});
-		
+
 		// Set z-indexes.
 		this.DOM.tabs.forEach(function(tab, idx) { tab.style.zIndex = idx === self.current ? 100 : 1; });
-		
+
 		// Animate tabs and bars.
 		var animeTabs = { targets: this.options.movable === 'all' ? this.DOM.tabs : this.DOM.tabs[this.current] },
 			animeBars = { targets: this.options.movable === 'all' ? this.DOM.bars : this.DOM.bars[this.current] },
@@ -196,15 +178,15 @@
 		animeTabs[this.options.layout === 'vertical' ? 'translateX' : 'translateY'] = animeTabsTranslation;
 		animeBars[this.options.layout === 'vertical' ? 'scaleX' : 'scaleY'] = animeBarsScale;
 		animeTabs.complete = function() {
-			self.isAnimating = false; 
+			self.isAnimating = false;
 			self.isOpen = true;
 			// Callback
 			self.options.onOpenTab(self.current, tab);
 		};
-		animeBars.update = function(anim) { 
+		animeBars.update = function(anim) {
 			self.options.onOpenBarsUpdate(anim, self.current, tab);
 		}
-		
+
 		anime(animeTabs);
 		anime(animeBars);
 
@@ -219,7 +201,7 @@
 				extraBounds = this.extraEl.getBoundingClientRect(),
 				animeExtraTranslation = this.options.layout === 'vertical' ? this.dim.win - (this.dim.position + this.dim.measure) + Math.abs(extraBounds.left - this.dim.position) + this.dim.measure : -1 * this.dim.position;
 
-			animeExtra[this.options.layout === 'vertical' ? 'translateX' : 'translateY'] = animeExtraTranslation;	
+			animeExtra[this.options.layout === 'vertical' ? 'translateX' : 'translateY'] = animeExtraTranslation;
 			anime(animeExtra);
 		}
 	};
@@ -250,12 +232,12 @@
 		animeTabs.complete = function() {
 			// Reset z-indexes.
 			tab.style.zIndex = 1;
-			self.isAnimating = false; 
+			self.isAnimating = false;
 			self.isOpen = false;
 			// Callback
 			self.options.onCloseTab(self.current, tab);
 		};
-		
+
 		anime(animeTabs);
 		anime(animeBars);
 
@@ -268,7 +250,7 @@
 					delay: Math.abs(this.current - this.totalTabs) * this.options.animedelay
 				};
 
-			animeExtra[this.options.layout === 'vertical' ? 'translateX' : 'translateY'] = 0;	
+			animeExtra[this.options.layout === 'vertical' ? 'translateX' : 'translateY'] = 0;
 			anime(animeExtra);
 		}
 	};
@@ -288,7 +270,7 @@
 
 		this.isVisible = true;
 
-		this.DOM.tabs.forEach(function(tab) { 
+		this.DOM.tabs.forEach(function(tab) {
 			var bar = tab.querySelector('.tabsnav__bar'),
 				title = tab.querySelector('.tabsnav__title');
 
@@ -301,7 +283,7 @@
 		});
 
 		this.DOM.el.classList.remove('tabsnav--hidden');
-		
+
 		// Animate bars.
 		anime.remove(this.DOM.bars);
 		var animeBars = {
@@ -361,7 +343,7 @@
 			complete: function() {
 				self.DOM.el.classList.add('tabsnav--hidden');
 				// reset all values.
-				self.DOM.tabs.forEach(function(tab) { 
+				self.DOM.tabs.forEach(function(tab) {
 					var bar = tab.querySelector('.tabsnav__bar'),
 						title = tab.querySelector('.tabsnav__title');
 
@@ -422,11 +404,11 @@
 	TabsNav.prototype._resize = function() {
 		var self = this;
 		win = {width: window.innerWidth, height: window.innerHeight};
-		
+
 		// If tabs are open then update translate & scale values taking in consideration the new window sizes.
 		if( this.isOpen ) {
 			// Update dim.win value.
-			this.dim.win = this.options.layout === 'vertical' ? win.width : win.height;	
+			this.dim.win = this.options.layout === 'vertical' ? win.width : win.height;
 
 			var currentTab = this.DOM.tabs[this.current],
 				translateStr = this.options.layout === 'vertical' ? 'translateX' : 'translateY',
@@ -451,7 +433,7 @@
 				}
 			});
 
-			// Reset extramovable elements 
+			// Reset extramovable elements
 			if( this.extraEl ) {
 				this.extraEl.style.transform = translateStr + '(' + (this.options.layout === 'vertical' ? this.dim.win - (this.dim.position + this.dim.measure) : -1 * this.dim.position) + 'px)';
 			}
