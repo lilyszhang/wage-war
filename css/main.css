@@ -21,6 +21,18 @@
  	background: #fff;
  }
 
+ a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  outline: none;
+ }
+
+ a:hover,
+ a:focus {
+  color: #EBE8DF;
+ }
+
  #buttons {
    margin: 0 auto;
    width: 50%;
@@ -33,6 +45,6 @@
 }
 
 .page-title {
-  font-size: 33px;
+  font-size: 29px;
   padding-right: 60px;
 }

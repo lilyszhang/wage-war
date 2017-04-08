@@ -22,7 +22,7 @@ function renderRatioChart() {
   $('#graph-container').append('<canvas id="payRatio"><canvas>');
   var payRatio = document.getElementById('payRatio').getContext('2d');
   payRatio.canvas.width = window.innerWidth;
-  payRatio.canvas.height = window.innerHeight-360;
+  payRatio.canvas.height = window.innerHeight-327;
   var data = [{
       type: 'bubble',
       label: 'Gender Pay Ratio',
@@ -172,7 +172,7 @@ function renderRatioChart() {
         label: 'Transportation and Production'
       }],
         borderColor: "transparent",
-        backgroundColor: '#91A8d0',
+        backgroundColor: '#226fbe',
         fill: false,
       },
       {
@@ -244,7 +244,7 @@ function renderRatioChart() {
                             occupation = payRatioChart.data["datasets"][0]["data"][i]["label"];
                           }
                         }
-                        tooltipEl.innerHTML = '<tr><td><span class="chartjs-tooltip-key"></span>'+ occupation +'</td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Male: $'+ male +'</td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Female: $'+ female +'</td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Ratio: '+ ratio +'</td></tr>';
+                        tooltipEl.innerHTML = '<tr><td><span class="chartjs-tooltip-key"></span><b>'+ occupation +'</b></td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Male: $'+ male +'</td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Female: $'+ female +'</td></tr><br><tr><td><span class="chartjs-tooltip-key"></span>Ratio: '+ ratio +'</td></tr>';
                 			}
                 			var positionY = this._chart.canvas.offsetTop;
                 			var positionX = this._chart.canvas.offsetLeft;
@@ -300,7 +300,7 @@ function renderHoursChart() {
   $('#graph-container').append('<canvas id="hoursC"><canvas>');
   var hoursC = document.getElementById('hoursC').getContext('2d');
   hoursC.canvas.width = window.innerWidth;
-  hoursC.canvas.height = window.innerHeight-50;
+  hoursC.canvas.height = window.innerHeight-45;
   var ctx = document.getElementById("hoursC").getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
@@ -308,7 +308,7 @@ function renderHoursChart() {
       labels: ["Management", "Business and Finance", "Mathematics", "Computer Systems Analyst", "Software Developer", "Computer Support", "Other Computer Occupations", "Operations Research Analyst", "Architecture and Engineering", "Sciences", "Community and Social Service", "Legal", "Education", "Arts, Media, and Sports", "Healthcare Practitioner", "Healthcare Support", "Protective Services", "Food and Food Service", "Building and Grounds Maintenance", "Personal Care and Service", "Sales", "Office and Administration", "Natural Resources and Construction", "Production and Transportation"],
       datasets: [{
         label: 'Hours',
-        backgroundColor: "rgba(166, 212, 159,1)",
+        backgroundColor: "rgba(34, 111, 190, 1)",
         data: [1.34, 1.35, 1.15, 1.11, 1.20, 1.06, 1.18, 1.06, 1.27, 1.18, 1.14, 1.65, 1.24, 1.20, 1.29, 1.16, 1.24, 1.13, 1.21, 1.27, 1.53, 1.06, 1.37, 1.33]
       },]
     },
@@ -331,6 +331,8 @@ function renderHoursChart() {
                stacked: true,
                scaleLabel: {
                  display: true,
+                 fontFamily: "Lato",
+
                },
                ticks: {
                     autoSkip: false,
