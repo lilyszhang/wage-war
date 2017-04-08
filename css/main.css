@@ -4,6 +4,7 @@
      opacity: 0;
      position: absolute;
      background: rgba(0, 0, 0, .7);
+     font-family: 'Lato', sans-serif;
      color: white;
      padding: 3px;
      border-radius: 3px;

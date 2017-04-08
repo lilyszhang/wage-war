@@ -40,8 +40,8 @@
 }
 
 .btn-6 {
-	color: #fff;
-	background: #226fbe;
+	background: transparent;
+	color: #226fbe;
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
@@ -57,6 +57,11 @@
 }
 
 .btn-6a:hover {
-	background: transparent;
-	color: #226fbe;
+	color: #fff;
+	background: #226fbe;
+}
+
+.btn.highlight {
+	color: #fff;
+	background: #226fbe;
 }
