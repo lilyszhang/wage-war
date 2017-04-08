@@ -1,13 +1,158 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en" class="no-js">
   <head>
-    <title>Gender Pay Gap: A Visualization</title>
-  </head>
-  <body>
-    <canvas id="payRatio" width="400" height="400"></canvas>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gender Pay Gap: A Visualization</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700i" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="normalize.css" />
+		<link rel="stylesheet" type="text/css" href="demo.css" />
+		<link rel="stylesheet" type="text/css" href="component.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
 
+
+  <body class="demo-1">
+  <h1 class="page-title" style="float: right; color: #333">Gender Pay Gap: A Visualization</h1>
+  <svg class="hidden">
+		<symbol id="icon-arrow" viewBox="0 0 24 24">
+			<title>arrow</title>
+			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+		</symbol>
+		<symbol id="icon-drop" viewBox="0 0 24 24">
+			<title>drop</title>
+			<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+		</symbol>
+		<symbol id="icon-caret" viewBox="0 0 24 24">
+			<title>caret</title>
+			<polygon points="15.7,16.6 11.1,12 15.7,7.4 14.3,6 8.3,12 14.3,18"/>
+		</symbol>
+		<symbol id="icon-menu" viewBox="0 0 24 24">
+			<title>menu</title>
+			<path d="M23.8,6H0.1V3h23.7V6z M23.8,10.5H0.1v3h23.7V10.5z M14.2,18h-14v3h14V18z"/>
+		</symbol>
+		<symbol id="icon-cross" viewBox="0 0 24 24">
+			<title>cross</title>
+			<path d="M14.1,12l7.3,7.3l-2.1,2.1L12,14.1l-7.3,7.3l-2.1-2.1L9.9,12L2.6,4.7l2.1-2.1L12,9.9l7.3-7.3l2.1,2.1L14.1,12z"/>
+		</symbol>
+	</svg>
+
+  	<button class="btn btn--menu">
+		<svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg>
+		<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>
+	</button>
+  <nav class="tabsnav tabsnav--vertical tabsnav--ander">
+		<div class="tabsnav__item">
+			<div class="tabsnav__bar" style="background-color: #E56759"></div>
+			<h3 class="tabsnav__title" style="color: #333">Tips</h3>
+		</div>
+		<div class="tabsnav__item">
+			<div class="tabsnav__bar" style="background-color:  #FCC54E"></div>
+			<h3 class="tabsnav__title" style="color: #333">Explaining the Gap</h3>
+		</div>
+		<div class="tabsnav__item">
+			<div class="tabsnav__bar" style="background-color:  #34BBC7"></div>
+			<h3 class="tabsnav__title" style="color: #333">About</h3>
+		</div>
+  </nav>
+
+  <div class="tabscontent">
+		<div class="tabscontent__item">
+			<figure class="poster">
+				<img class="poster__img" src="woman-silhouette.png" alt="Poster 1"/>
+				<figcaption class="poster__caption">
+					<p class="poster__deco"></p>
+					<div class="poster__box"></div>
+					<span class="poster__number"></span>
+				</figcaption>
+			</figure>
+			<h2 class="poster__title">1. Get Trained Through Experience<br/>2. Gain Access to Power<br/>3. Make Achievements Visible<br/>4. Blur Work-Life Boundaries<br/>5. Get Formal Training<br/>6. Plan Career<br/>7. Seek Advice When Needed<br/>8. Scan For Opportunity Outside The Company<br/>9. Scan For Opportunity Inside The Company</h2>
+		</div>
+
+		<div class="tabscontent__item">
+
+			<figure class="poster">
+				<img class="poster__img"/>
+				<figcaption class="poster__caption">
+					<h2 class="poster__title"></h2>
+					<p class="poster__deco"></p>
+					<div class="poster__box"></div>
+					<span class="poster__number"></span>
+				</figcaption>
+			</figure>
+
+			<div class="teambox">
+				<div class="flip_container">
+					<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						<div class="flipper">
+							<div class="front-face">
+								<p class="square-text">Glass Ceiling</p>
+							</div>
+							<div class="back-face">
+								<p>hello test</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="square">
+					<p class="square-text">Double Bind</p>
+				</div>
+
+				<div class="square">
+					<p class="square-text">Education Inequality</p>
+				</div>
+
+				<div class="square">
+					<p class="square-text">Second Shift</p>
+				</div>
+
+				<div class="square">
+					<p class="square-text">Gender Stereotypes</p>
+				</div>
+
+				<div class="square">
+					<p class="square-text">Workplace Harassment</p>
+				</div>
+			</div>
+
+			
+			
+
+			
+
+		</div>
+
+		<div class="tabscontent__item">
+			<figure class="poster">
+				<img class="poster__img" src="img/img1.jpg" alt="Poster 1"/>
+				<figcaption class="poster__caption">
+					<h2 class="poster__title">home<br/>maze</h2>
+					<p class="poster__deco">binary sun</p>
+					<div class="poster__box"></div>						
+					<span class="poster__number">03</span>
+				</figcaption>
+			</figure>
+		</div>
+		<button class="btn btn--back"><svg class="icon icon--caret"><use xlink:href="#icon-caret"></use></svg></button>
+  </div>
+  
+
+  <div id="main-chart">
+    <canvas id="payRatio" width="400" height="400"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="main.js"></script>
+  </div>
+
+<script src="anime.min.js"></script>
+<script src="enquire.min.js"></script>
+<script src="tabsnav.js"></script>
+<script src="demo1.js"></script>
+
   </body>
 </html>
