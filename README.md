@@ -1,2 +1,2 @@
-# gender-pay-gap
-Gender Pay Gap Visualization
+# wagewars
+The Wage Wars: A Visualization of the Gender Pay Gap
