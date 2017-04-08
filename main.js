@@ -1,26 +1,48 @@
 var payRatio = document.getElementById('payRatio');
 
+Chart.pluginService.register({
+    beforeInit: function(chart) {
+        // We get the chart data
+        var data = chart.config.data;
+
+        // For every dataset ...
+        for (var i = 0; i < data.datasets.length; i++) {
+
+            // For every label ...
+            for (var j = 0; j < data.labels.length; j++) {
+
+                // We get the dataset's function and calculate the value
+                var fct = data.datasets[i].function,
+                    x = data.labels[j],
+                    y = fct(x);
+                // Then we add the value to the dataset data
+                data.datasets[i].data.push(y);
+            }
+        }
+    }
+});
+
 var payRatioChart = new Chart(payRatio, {
     type: 'line',
     data: {
         datasets: [{
-            label: 'Scatter Dataset',
+            label: 'Gender Pay Ratio',
             data: [{
               //Management Occupations
-                x: 59696,
-                y: 80028
+                x: 80028,
+                y: 59696
             }, {
               //Business and Financial Operations Occupations
-                x: 52936,
-                y: 71396
+                x: 71396,
+                y: 52936
             }, {
               //Computer and Mathetmatical Occupations
-                x: 68900,
-                y: 78936
+                x: 78936,
+                y: 68900
             }, {
               //Computer Systems Analaysts
-              x: 69056,
-              y: 76700
+              x: 76700,
+              y: 69056
             }, {
               //Software developers, applications and systems software
               x: 96876,
@@ -102,7 +124,13 @@ var payRatioChart = new Chart(payRatio, {
               x: 36608,
               y: 27612
             }]
-        }]
+        },
+      {
+        label: "Equal Pay",
+        function: function(x) { return x },
+        data: [],
+        borderColor: "rgba(153, 102, 255, 1)",
+      }]
     },
     options: {
       showLines: false,
