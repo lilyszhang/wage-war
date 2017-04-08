@@ -150,13 +150,13 @@ a:focus {
 }
 
 .btn--back {
-	font-size: 1.5em;
+	font-size: 3em;
 	position: absolute;
 	z-index: 1002;
-	top: 1em;
+	top: 7em;
 	right: 1em;
 	opacity: 0;
-	color: #1d48f3;
+	color: #333;
 }
 
 .btn--menu {
@@ -524,6 +524,7 @@ a:focus {
 
 #text-holder {
 	margin-left: -150px;
+	margin-bottom: 100px;
 }
 
 .square {
@@ -589,6 +590,6 @@ a:focus {
 
 #text-section {
 	padding-left: 150px;
-	padding-right: 50px;
+	padding-right: 150px;
 
 }
